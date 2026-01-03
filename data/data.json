@@ -1,0 +1,39 @@
+{
+    "events": [
+        {
+            "title": "The Grand Communion & Covenant Night",
+            "date_short": "JAN 05",
+            "time": "6:00 PM GMT",
+            "category": "Sacramental",
+            "description": "A sophisticated evening of liturgical worship and partaking in the table of the Lord to seal the year's covenant."
+        },
+        {
+            "title": "Marketplace Mastery: Excellence Seminar",
+            "date_short": "JAN 12",
+            "time": "9:00 AM GMT",
+            "category": "Empowerment",
+            "description": "Strategic insights for professionals and entrepreneurs to dominate their industry through Biblical principles and kingdom excellence."
+        },
+        {
+            "title": "Night of 10,000 Hallelujahs",
+            "date_short": "JAN 30",
+            "time": "9:00 PM GMT",
+            "category": "Worship",
+            "description": "An immersive, high-praise experience featuring an orchestral ensemble and a mass choir bringing down the manifest glory of God."
+        },
+        {
+            "title": "The Leadership & Impact Summit",
+            "date_short": "FEB 14",
+            "time": "10:00 AM GMT",
+            "category": "Leadership",
+            "description": "A gathering of visionaries and leaders aimed at building structural integrity and spiritual authority in global ministry."
+        },
+        {
+            "title": "Prophetic School of Ministry",
+            "date_short": "MAR 02",
+            "time": "5:30 PM GMT",
+            "category": "Discipleship",
+            "description": "A deep dive into the mysteries of the Word and the operation of the gifts of the Spirit for the modern believer."
+        }
+    ]
+}

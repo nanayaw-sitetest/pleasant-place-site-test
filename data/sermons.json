@@ -1,0 +1,84 @@
+{
+    "sermons": [
+        {
+            "title": "The Seal is Broken",
+            "series": "Foundations of Fire",
+            "speaker": "Dr. Bishop Gideon Titi-Ofei",
+            "date": "Dec 28, 2025",
+            "topic": "Motivation",
+            "videoUrl": "https://www.youtube.com/watch?v=Is47DztkN74",
+            "thumbnail": "images/bb.jpg",
+            "summary": "The season of containment is over. The seal of limitation has been shattered by the Lion of the Tribe of Judah, and what was hidden is now being revealed for your glory!."
+        },
+        {
+            "title": "The God of multiplication",
+            "series": "Kingdom Economics",
+            "speaker": "Lady Rev. Olivia Titi-Ofei",
+            "date": "Dec 21, 2025",
+            "topic": "Prophetic",
+            "videoUrl": "https://www.youtube.com/watch?v=VHz4Yf1nkvA",
+            "thumbnail": "images/ol.jfif",
+            "summary": "God doesn't just add to your life; He multiplies! He is taking your five loaves and two fish and turning your 'not enough' into 'more than enough' for the multitude.."
+        },
+        {
+            "title": "Time of worship with The Lord's Anointed",
+            "series": "The Discernment Series",
+            "speaker": "Pastor Kevin Titi-Ofei",
+            "date": "Dec 14, 2025",
+            "topic": "Worship",
+            "videoUrl": "https://www.youtube.com/watch?v=4EbUAIaT11U",
+            "thumbnail": "images/kv.jpeg",
+            "summary": "Worship is the bridge between your trial and your triumph. When you give Him your breath in praise, He gives you His strength for the journey."
+        },
+        {
+            "title": "Unusual Prayer Chambers, Unusual Prayers Unusual Answers",
+            "series": "Year of the Masterpiece",
+            "speaker": "Dr. Bishop Gideon Titi-Ofei",
+            "date": "Dec 07, 2025",
+            "topic": "Grace",
+            "videoUrl": "https://www.youtube.com/watch?v=F4SfLcsxm3k",
+            "thumbnail": "images/bb.jpg",
+            "summary": "Standard prayers won't solve unusual problems. It takes a deep groaning in the secret chamber to unlock the answers that bypass the protocols of men."
+        },
+        {
+            "title": "The 12 Laws of Influence",
+            "series": "Leadership Excellence",
+            "speaker": "Dr. Bishop Gideon Titi-Ofei",
+            "date": "Nov 30, 2025",
+            "topic": "Leadership",
+            "videoUrl": "https://www.youtube.com/watch?v=ZXJzrnPR05g",
+            "thumbnail": "images/bb.jpg",
+            "summary": "Building a mind that can withstand the pressures of high-level ministry and corporate leadership. Shifting from victim to victor."
+        },
+        {
+            "title": "Falling in Love",
+            "series": "Heart Matters",
+            "speaker": "Lady Rev. Olivia-Titi Ofei",
+            "date": "Nov 23, 2025",
+            "topic": "Revelations",
+            "videoUrl": "https://www.youtube.com/watch?v=lnFjUgpZl0o",
+            "thumbnail": "images/ol.jfif",
+            "summary": "A refreshing look at 1 Corinthians 13 and how authentic love serves as the foundation for all successful ministry work."
+        },
+        {
+            "title": "The D.I.S.C.I.P.L.E. ",
+            "series": "Foundations of Fire",
+            "speaker": "Pastor Kevin Titi-Ofei",
+            "date": "Nov 16, 2025",
+            "topic": "Deliverance",
+            "videoUrl": "https://www.youtube.com/watch?v=ABsREHqyThY",
+            "thumbnail": "images/kv.jpeg",
+            "summary": "Identifying the invisible barriers that stop progress and using the authority of Christ to dismantle ancestral strongholds."
+        },
+        {
+            "title": "The Perfect Will Of God ",
+            "series": "The Supernatural Realm",
+            "speaker": "Pastor Joshua Heward-Mills",
+            "date": "Nov 09, 2025",
+            "topic": "Supernatural",
+            "videoUrl": "https://www.youtube.com/watch?v=GC0PeDc-_gk",
+            "thumbnail": "images/jm.jpg",
+            "summary": "Understanding the angelic hierarchy and how to deploy heavenly messengers to assist in your earthly assignment."
+        }
+    ]
+}

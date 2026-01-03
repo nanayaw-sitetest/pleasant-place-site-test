@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covenant Partnership | Pleasant Place</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="giving-page">
+
+    <header>
+        <nav class="container nav-flex">
+            <div class="logo">
+                PLEASANT <span class="gold-text">PLACE</span>
+                <p class="tagline">CHURCH INTERNATIONAL</p>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="giving.html" class="btn-gold-sm active">Give Online</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="giving-hero">
+        <div class="container text-center">
+            <h1 class="white-text">Honoring God with <span class="gold-text">Excellence</span></h1>
+            <p class="white-text">"Honor the Lord with your wealth and with the firstfruits of all your produce." — Proverbs 3:9</p>
+        </div>
+    </section>
+
+    <section class="giving-portal container">
+        <div class="giving-grid">
+            
+            <div class="giving-info">
+                <h2 class="green-text">The <span class="gold-text">Sacrifice</span> of Worship</h2>
+                <p>At Pleasant Place, we believe that giving is an acknowledgement of God’s sovereignty over our resources. Your seeds enable us to continue the mandate of raising global leaders and building the Kingdom.</p>
+                
+                <div class="giving-options-list">
+                    <div class="option-item">
+                        <h4>Tithe & Firstfruits</h4>
+                        <p>The 10% that acknowledges God as the source of your increase.</p>
+                    </div>
+                    <div class="option-item">
+                        <h4>Missions & Outreach</h4>
+                        <p>Supporting our global media missions and community projects.</p>
+                    </div>
+                    <div class="option-item">
+                        <h4>Project Seed</h4>
+                        <p>Investing in the expansion of our physical sanctuaries worldwide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="giving-form-container">
+                <div class="form-header">
+                    <button class="tab-btn active" onclick="switchCurrency('GHS')">₵ GHS</button>
+                    <button class="tab-btn" onclick="switchCurrency('USD')">$ USD</button>
+                    <button class="tab-btn" onclick="switchCurrency('GBP')">£ GBP</button>
+                </div>
+                
+                <form id="givingForm" class="actual-form">
+                    <label>Select Category</label>
+                    <select id="givingCategory">
+                        <option>General Tithe</option>
+                        <option>Missionary Support</option>
+                        <option>Expansion Project</option>
+                        <option>Seeds of Hope</option>
+                    </select>
+
+                    <label>Amount (<span id="currencyLabel">GHS</span>)</label>
+                    <input type="number" placeholder="Enter Amount" required>
+
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Nana Yaw Awuah" required>
+
+                    <label>Email Address</label>
+                    <input type="email" placeholder="nana@example.com" required>
+
+                    <button type="submit" class="btn-gold-full">Proceed to Secure Payment</button>
+                    
+                    <div class="secure-tag">
+                        <span>🔒 SSL Encrypted & Secure</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="grand-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3 class="gold-text">PLEASANT PLACE</h3>
+                <p>A global ministry dedicated to the transformation of lives through the Gospel of Jesus Christ.</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="gold-text">Quick Access</h4>
+                <ul>
+                    <li><a href="#">Ministry Groups</a></li>
+                    <li><a href="#">Giving Portal</a></li>
+                    <li><a href="#">Prayer Requests</a></li>
+                    <li><a href="#">Counseling</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h4 class="gold-text">Service Hours</h4>
+                <p>Sundays: 08:00 & 10:30 GMT</p>
+                <p>Tuesdays: 18:00 GMT</p>
+                <p>Fridays: 23:00 GMT (Vigil)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with ❤️ by <strong>Nana Yaw Awuah</strong> | &copy; 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function switchCurrency(ccy) {
+            document.getElementById('currencyLabel').innerText = ccy;
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

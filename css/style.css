@@ -1,0 +1,765 @@
+:root {
+    --gold: #d4af37;
+    --gold-dark: #aa8c2c;
+    --forest-green: #0a2e1f;
+    --emerald: #1e5631;
+    --white: #ffffff;
+    --cream: #fcfaf2;
+    --text-gray: #4a4a4a;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --- Base Reset & Typography --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--text-gray); overflow-x: hidden; line-height: 1.7; }
+h1, h2, h3, .logo { font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 2px; }
+.container { width: 90%; max-width: 1300px; margin: 0 auto; }
+
+/* --- Helper Classes --- */
+.gold-text { color: var(--gold); }
+.white-text { color: var(--white); }
+.green-text { color: var(--forest-green); }
+.section-title-center { text-align: center; margin-bottom: 60px; }
+
+/* --- Top Bar & Navigation --- */
+.top-bar { background: var(--forest-green); color: var(--gold); padding: 10px 0; font-size: 0.85rem; border-bottom: 2px solid var(--gold); font-weight: 600; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.6rem; line-height: 1; color: var(--forest-green); }
+.tagline { font-family: 'Montserrat'; font-size: 0.65rem; letter-spacing: 4px; color: var(--text-gray); font-weight: 400; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--forest-green); font-weight: 700; font-size: 0.85rem; transition: var(--transition); position: relative; }
+.nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--gold); transition: var(--transition); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover, .active { color: var(--gold); }
+
+/* --- HAMBURGER MENU STYLES --- */
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    z-index: 1001;
+}
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--forest-green);
+    margin: 5px;
+    transition: var(--transition);
+}
+
+/* --- Hero Section --- */
+.hero-master {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1548625361-1250346a096c?auto=format&fit=crop&q=80&w=1400') center/cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(10,46,31,0.95) 0%, rgba(10,46,31,0.6) 100%); }
+.hero-content { position: relative; z-index: 2; padding-top: 50px; }
+.hero-content h1 { font-size: 4.5rem; margin: 25px 0; line-height: 1.1; }
+.gold-text-gradient { background: linear-gradient(to bottom, #fcf6ba, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* --- Buttons --- */
+.btn-main, .btn-gold-sm { background: var(--gold); color: var(--forest-green); padding: 18px 45px; text-decoration: none; font-weight: 800; border-radius: 2px; display: inline-block; transition: var(--transition); border: 2px solid var(--gold); letter-spacing: 1px; }
+.btn-main:hover { background: transparent; color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.btn-outline-gold { border: 2px solid var(--gold); color: var(--gold); padding: 18px 45px; text-decoration: none; font-weight: 800; border-radius: 2px; display: inline-block; margin-left: 15px; transition: var(--transition); }
+.btn-outline-gold:hover { background: var(--gold); color: var(--forest-green); }
+.btn-gold-sm { padding: 10px 20px; font-size: 0.75rem; }
+
+/* --- Pillars Section --- */
+.pillars-section { padding: 120px 0; }
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.pillar-item { background: var(--white); padding: 50px 30px; text-align: center; border: 1px solid #eee; transition: var(--transition); box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+.pillar-num { display: block; font-family: 'Cinzel'; font-size: 3rem; color: rgba(212, 175, 55, 0.15); margin-bottom: -15px; font-weight: 700; }
+.pillar-item h4 { margin-bottom: 15px; font-size: 1.1rem; color: var(--forest-green); }
+.pillar-item:hover { background: var(--forest-green); border-color: var(--gold); transform: translateY(-10px); }
+.pillar-item:hover h4, .pillar-item:hover p { color: var(--white); }
+
+/* --- Pastor Section --- */
+.pastor-section { padding: 120px 0; background: var(--white); }
+.pastor-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.gold-frame { border: 15px solid var(--gold); padding: 12px; position: relative; box-shadow: 30px 30px 0px var(--forest-green); }
+.gold-frame img { width: 100%; display: block; filter: sepia(20%); }
+
+/* --- Departments Section --- */
+.departments-section { padding: 120px 0; background: var(--white); }
+.dept-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.dept-box { padding: 20px; border-bottom: 1px solid #eee; transition: var(--transition); }
+.dept-box:hover { padding-left: 30px; border-bottom-color: var(--gold); }
+.dept-visual { position: relative; }
+.gold-abstract-bg { position: absolute; width: 100%; height: 100%; background: var(--gold); top: 25px; left: 25px; z-index: 1; border-radius: 4px; }
+.dept-visual img { position: relative; z-index: 2; width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* --- Schedule (Glassmorphism) --- */
+.schedule-section { 
+    background: linear-gradient(rgba(10,46,31,0.92), rgba(10,46,31,0.92)), url('https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover; background-attachment: fixed; padding: 120px 0;
+}
+.glass-card { 
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3); padding: 70px; border-radius: 8px; 
+}
+.schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+.day-slot { border-left: 4px solid var(--gold); padding-left: 25px; }
+.day { color: var(--gold); font-family: 'Cinzel'; font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+.time { color: white; font-size: 1.5rem; font-weight: 300; display: block; }
+.activity { color: #bdbdbd; font-size: 0.95rem; }
+
+/* --- Values Section --- */
+.values-section { background: var(--forest-green); padding: 120px 0; text-align: center; }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+.value-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(212, 175, 55, 0.4); padding: 50px; transition: var(--transition); }
+.value-card:hover { background: var(--gold); transform: scale(1.05); }
+
+/* --- Testimony Section --- */
+.testimony-section { padding: 120px 0; text-align: center; background: var(--cream); }
+.quote-mark { font-size: 10rem; line-height: 0; display: block; margin-bottom: 40px; opacity: 0.3; }
+.testimony-content h3 { font-style: italic; font-size: 2rem; color: var(--forest-green); max-width: 900px; margin: 0 auto; line-height: 1.4; text-transform: none; font-family: 'Montserrat'; }
+.author { margin-top: 30px; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
+
+/* --- Footer --- */
+.grand-footer { background: #04140d; color: var(--white); padding: 100px 0 0; border-top: 4px solid var(--gold); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; padding-bottom: 60px; }
+.footer-brand h3 { font-size: 1.8rem; margin-bottom: 20px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links a { color: #bbb; text-decoration: none; transition: var(--transition); font-size: 0.9rem; }
+.footer-links a:hover { color: var(--gold); padding-left: 5px; }
+.footer-bottom { background: #000; padding: 30px 0; text-align: center; font-size: 0.85rem; color: #666; letter-spacing: 1px; }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .pastor-grid, .dept-wrapper, .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-content h1 { font-size: 3rem; }
+    .glass-card { padding: 40px; }
+}
+
+@media (max-width: 768px) {
+    .nav-flex { 
+        padding: 0 20px;
+    }
+
+    /* Keep Giveaway Visible & Hamburger Next to it */
+    .nav-cta { 
+        display: block !important; 
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .hamburger-menu { 
+        display: block; 
+    }
+
+    /* Slide-in Mobile Menu */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        transition: 0.5s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    /* Hamburger Animation States */
+    .toggle-icon .bar1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle-icon .bar2 { opacity: 0; }
+    .toggle-icon .bar3 { transform: rotate(45deg) translate(-5px, -6px); }
+
+    .hero-content h1 { font-size: 2.2rem; }
+    .values-grid { grid-template-columns: 1fr; }
+    .btn-outline-gold { margin-left: 0; margin-top: 15px; width: 100%; }
+    .btn-main { width: 100%; }
+}
+
+/* --- Sermon Page Specifics --- */
+.featured-sermon { background: var(--forest-green); padding: 80px 0; color: white; }
+.featured-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; align-items: center; }
+.video-container { border: 5px solid var(--gold); border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.sermon-meta { margin: 20px 0; font-size: 0.8rem; letter-spacing: 1px; color: var(--gold); }
+.filter-bar { background: var(--white); padding: 30px 0; border-bottom: 1px solid #ddd; }
+.search-box { display: flex; gap: 10px; }
+.search-box input { padding: 10px 15px; border: 1px solid #ddd; width: 300px; font-family: 'Montserrat'; }
+.sermon-grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 60px 0; }
+.sermon-card { background: var(--white); border: 1px solid #eee; transition: var(--transition); overflow: hidden; }
+.sermon-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+.sermon-thumb { width: 100%; height: 200px; background-size: cover; background-position: center; position: relative; }
+.play-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(10, 46, 31, 0.4); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+.sermon-card:hover .play-overlay { opacity: 1; }
+.play-btn { background: var(--gold); width: 50px; height: 50px; border-radius: 50%; color: white; text-align: center; line-height: 50px; font-size: 1.2rem; }
+.sermon-content { padding: 25px; }
+.sermon-content h4 { color: var(--forest-green); margin-bottom: 10px; font-size: 1.1rem; }
+.sermon-content p { font-size: 0.85rem; color: #777; margin-bottom: 15px; }
+
+/* --- Bold About Page Enhancements --- */
+.about-hero-bold {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1544427928-c49cdfebf194?auto=format&fit=crop&q=80&w=1600') fixed center/cover;
+    position: relative;
+}
+.giant-text {
+    font-size: 8rem; font-weight: 900; line-height: 0.9; color: white; letter-spacing: -5px; font-family: 'Cinzel', serif;
+}
+.hero-subline { font-size: 1.5rem; color: #ccc; max-width: 600px; margin-top: 20px; }
+.mandate-section { padding: 120px 0; }
+.mandate-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
+.ultra-bold-title { font-size: 4rem; font-weight: 900; margin-bottom: 30px; letter-spacing: 2px; }
+.lead-text { font-size: 1.4rem; color: var(--forest-green); font-weight: 600; margin-bottom: 30px; }
+.stat-box { border-bottom: 1px solid #ddd; padding: 30px 0; }
+.stat-num { font-size: 3rem; font-weight: 900; display: block; }
+.vision-parallax {
+    background: linear-gradient(rgba(10,46,31,0.85), rgba(10,46,31,0.85)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1400') fixed center/cover;
+    padding: 150px 0; text-align: center; color: white;
+}
+.big-quote { font-family: 'Cinzel'; font-size: 2.5rem; max-width: 900px; margin: 0 auto; line-height: 1.4; }
+.big-quote cite { display: block; margin-top: 20px; font-size: 1.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
+.pillar-bold-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+.pillar-card { background: #f9f9f9; padding: 50px 30px; transition: 0.5s; position: relative; border-bottom: 8px solid transparent; }
+.pillar-card:hover { background: white; box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-color: var(--gold); transform: translateY(-10px); }
+
+/* --- Improved Giving Page Specifics --- */
+.giving-hero { 
+    padding: 140px 0 100px; 
+    background: linear-gradient(rgba(10,46,31,0.85), rgba(10,46,31,0.85)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1400'); 
+    background-size: cover; 
+    background-position: center;
+    text-align: center; 
+}
+
+.giving-hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+.giving-hero p { font-style: italic; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+.giving-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1.1fr; 
+    gap: 80px; 
+    padding: 100px 0; 
+    align-items: start; 
+}
+
+.giving-info h2 { font-size: 2.5rem; margin-bottom: 25px; line-height: 1.2; }
+.giving-info > p { font-size: 1.1rem; margin-bottom: 40px; color: #555; }
+
+.giving-options-list { display: flex; flex-direction: column; gap: 25px; }
+
+.option-item { 
+    background: var(--white);
+    padding: 25px; 
+    border-left: 4px solid var(--gold); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.option-item:hover {
+    transform: translateX(10px);
+    background: #fdfdfd;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.option-item h4 { color: var(--forest-green); margin-bottom: 8px; font-size: 1.2rem; }
+.option-item p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+
+.giving-form-container { 
+    background: white; 
+    padding: 50px; 
+    border-radius: 8px; 
+    box-shadow: 0 40px 80px rgba(0,0,0,0.08); 
+    border-top: 6px solid var(--gold); 
+}
+
+.form-header { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 35px; 
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.tab-btn { 
+    flex: 1;
+    background: #f8f8f8; 
+    border: 1px solid #ececec; 
+    padding: 12px; 
+    cursor: pointer; 
+    font-family: 'Montserrat'; 
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--forest-green);
+    transition: 0.3s ease; 
+}
+
+.tab-btn:hover { background: #eee; }
+
+.tab-btn.active { 
+    background: var(--gold); 
+    color: white; 
+    border-color: var(--gold); 
+}
+
+.actual-form label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--forest-green);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.actual-form input, .actual-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fbfbfb;
+    font-family: 'Montserrat';
+    transition: 0.3s;
+}
+
+.actual-form input:focus {
+    border-color: var(--gold);
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.btn-gold-full { 
+    width: 100%; 
+    background: var(--forest-green); 
+    color: white; 
+    border: none; 
+    padding: 20px; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer; 
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+.btn-gold-full:hover { 
+    background: var(--gold); 
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.secure-tag { 
+    text-align: center; 
+    margin-top: 25px; 
+    color: #999; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness for Giving Page */
+@media (max-width: 992px) {
+    .giving-grid { grid-template-columns: 1fr; gap: 60px; }
+    .giving-hero h1 { font-size: 2.8rem; }
+}
+/* --- Departments Page Styles --- */
+.dept-hero { background: linear-gradient(rgba(10,46,31,0.9), rgba(10,46,31,0.9)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1400'); background-size: cover; padding: 100px 0; }
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 80px 0; }
+.dept-card { background: white; padding: 40px; border-bottom: 4px solid transparent; transition: 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.dept-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+
+/* --- Events Page Styles --- */
+.featured-event { background: #051b12; padding: 100px 0; position: relative; overflow: hidden; }
+.featured-info h1 { font-size: 4.5rem; line-height: 0.9; margin: 20px 0; font-family: 'Cinzel'; }
+.event-card-v2 { background: #fff; display: flex; align-items: center; padding: 30px; border: 1px solid #eee; transition: 0.3s; }
+.event-date-badge { background: var(--forest-green); color: white; padding: 15px; text-align: center; min-width: 80px; margin-right: 25px; }
+
+/* --- Contact Styles --- */
+.contact-hero-premium { height: 60vh; background: linear-gradient(rgba(10,46,31,0.8), rgba(10,46,31,0.8)), url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=1400'); background-size: cover; display: flex; align-items: center; }
+.contact-form-card { background: white; padding: 60px; box-shadow: 0 40px 100px rgba(0,0,0,0.08); border-radius: 8px; margin-top: -150px; z-index: 10; position: relative; }
+
+/*Mobile hamburger*/
+@media (max-width: 768px) {
+    /* Header layout: Logo - CTA - Hamburger */
+    .nav-flex {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    /* Hide standard links, prepare mobile drawer */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        right: -100%; /* Hidden off-screen */
+        top: 0;
+        height: 100vh;
+        width: 75%;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 1000;
+        gap: 30px;
+    }
+
+    /* When JS adds this class, the menu slides in */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    /* Ensure "Give Online" is always visible on mobile */
+    .nav-cta {
+        display: block !important;
+        margin-left: auto;
+        margin-right: 15px;
+        order: 2;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+        order: 3;
+        z-index: 1001;
+    }
+
+    /* Hamburger bars */
+    .hamburger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--forest-green);
+        margin: 5px;
+        transition: var(--transition);
+    }
+}
+
+/* --- About Page Mobile Fixes --- */
+@media (max-width: 768px) {
+    .giant-text {
+        font-size: 3.5rem !important; /* Reduces from huge desktop size */
+        line-height: 1.1;
+    }
+
+    .mandate-grid {
+        display: block; /* Stacks the sidebar below the text */
+    }
+
+    .stat-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .stat-box {
+        flex: 1;
+        min-width: 140px;
+        padding: 20px;
+    }
+
+    .big-quote {
+        font-size: 1.5rem !important; /* Makes the parallax quote readable */
+        padding: 0 20px;
+    }
+
+    .pillar-bold-grid {
+        grid-template-columns: 1fr; /* Stacks the 4 pillars vertically */
+        gap: 20px;
+    }
+}
+
+/* --- Events Mobile Optimization --- */
+@media (max-width: 768px) {
+    /* Stack the featured event image below the text */
+    .featured-grid {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .featured-info h1 {
+        font-size: 2.5rem; /* Shrink the large header */
+    }
+
+    .event-meta {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Adjust the Calendar cards */
+    .calendar-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
+    .event-card-v2 {
+        flex-direction: column; /* Stack date badge on top of text */
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .event-date-badge {
+        margin: 0 auto 15px; /* Center the date badge */
+    }
+}
+
+/* --- High-End Contact Form Refinement --- */
+
+/* 1. Layout Adjustments */
+.contact-form-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05); /* Softer, modern shadow */
+}
+
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 5px;
+}
+
+.form-row .field {
+    flex: 1;
+}
+
+/* 2. Field Styling */
+.field {
+    margin-bottom: 25px;
+}
+
+.field label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #0a2e1f; /* Forest Green */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* 3. Input, Select, and Textarea */
+#pp-contact-form input, 
+#pp-contact-form select, 
+#pp-contact-form textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Placeholder Styling */
+#pp-contact-form ::placeholder {
+    color: #b0b0b0;
+    font-weight: 300;
+}
+
+/* 4. Focus & Interaction States */
+#pp-contact-form input:focus, 
+#pp-contact-form select:focus, 
+#pp-contact-form textarea:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #d4af37; /* Gold */
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.1);
+    transform: translateY(-1px);
+}
+
+#pp-contact-form .field:focus-within label {
+    color: #d4af37; /* Label turns gold when typing */
+}
+
+/* 5. The "Submit" Button */
+.btn-gold-full {
+    display: block;
+    width: 100%;
+    background: #0a2e1f; /* Forest Green base */
+    color: #ffffff;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+.btn-gold-full:hover {
+    background: #d4af37; /* Gold on hover */
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    transform: translateY(-3px);
+}
+
+/* 6. Mobile Responsiveness for the Form */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .contact-form-card {
+        padding: 30px 20px;
+    }
+}
+
+/* --- Fix for Sidebar Overlap --- */
+
+/* Ensure the container doesn't allow children to overlap */
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap; /* Forces items to stack if they run out of space */
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Ensure the sidebar maintains its own space */
+.contact-sidebar {
+    flex: 1;
+    min-width: 300px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Ensure the form card doesn't slide over the sidebar */
+.contact-form-card {
+    flex: 2;
+    min-width: 350px;
+    z-index: 1;
+    position: relative;
+    /* If you have a negative margin-top here, reduce it */
+    margin-top: -60px; 
+}
+
+/* Responsive Fix: On tablets and phones, remove the negative margin 
+   completely so it cannot cover the Phone/Email info above it */
+@media (max-width: 992px) {
+    .contact-form-card {
+        margin-top: 20px !important; 
+    }
+    
+    .contact-hero-premium {
+        padding-bottom: 60px !important;
+    }
+    
+    .contact-hub {
+        margin-top: 0 !important;
+    }
+}
+
+/* --- Join Form Excellence Styling (High Contrast Version) --- */
+.join-box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: #ffffff; /* Ensuring the box itself is white for contrast */
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.dark-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.field-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Perfect alignment for all inputs - Text set to Black */
+.dark-form input, 
+.dark-form select, 
+.dark-form textarea {
+    width: 100% !important;
+    box-sizing: border-box !important; 
+    padding: 15px 20px;
+    background: #f9f9f9; /* Light solid background for visibility */
+    border: 1px solid #cccccc; /* Darker border */
+    border-radius: 8px;
+    color: #000000; /* ALL TEXT BLACK */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Make placeholders darker for better visibility */
+.dark-form ::placeholder {
+    color: #555555;
+    opacity: 1;
+}
+
+/* Dropdown Arrow Fix - Changed to black to match text */
+.dark-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+}
+
+/* Horizontal Row for Desktop */
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-row .field-group {
+    flex: 1;
+}
+
+/* Focus state for better UX */
+.dark-form input:focus, 
+.dark-form select:focus, 
+.dark-form textarea:focus {
+    outline: none;
+    border-color: #d4af37; /* Gold border on focus */
+    background: #ffffff;
+}
+
+/* Textarea height/width lock */
+.dark-form textarea {
+    resize: none; 
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; 
+        gap: 0;
+    }
+    
+    .join-box {
+        padding: 30px 20px;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermon Archive | Pleasant Place</title>
+     <link rel="icon" type="images/png" href="images/ppl.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .nav-flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .nav-links {
+                display: flex !important; /* Forces visibility */
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px 0;
+                gap: 15px;
+            }
+            .nav-cta {
+                margin-top: 10px;
+            }
+            header {
+                padding: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body class="sermon-page">
+
+    <header>
+        <nav class="container nav-flex">
+            <div class="logo">
+                PLEASANT <span class="gold-text">PLACE</span>
+                <p class="tagline">CHURCH INTERNATIONAL</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="sermons.html" class="active">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="giving.html" class="btn-gold-sm">Give Online</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="featured-sermon">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="video-container">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/Jag66Y_EayQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="featured-info">
+                    <span class="gold-text">LATEST MESSAGE</span>
+                    <h2>S.T.A.R.T || An Inspirational Sermon by Bishop Dr. Gideon Titi-Ofei <span class="gold-text">Divine Expansion</span></h2>
+                    <p>Bishop Dr. Gideon Titi-Ofei how the believer can tap into the supernatural grace for increase in this season of expansion.</p>
+                    <div class="sermon-meta">
+                        <span>📅 Jan 2, 2026</span>
+                        <span>🎧 Audio Available</span>
+                    </div>
+                    <a href="#" class="btn-main">Download Study Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-bar">
+        <div class="container flex-between">
+            <h3 class="green-text">Sermon <span class="gold-text">Library</span></h3>
+            <div class="search-box">
+                <input type="text" id="sermon-search" placeholder="Search by Topic or Speaker...">
+                <button class="btn-gold-sm" id="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sermon-library container">
+        <div id="sermon-grid" class="sermon-grid-layout">
+            <div class="loader">Accessing the Archive...</div>
+        </div>
+    </section>
+
+   <footer class="grand-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3 class="gold-text">PLEASANT PLACE</h3>
+                <p>A global ministry dedicated to the transformation of lives through the Gospel of Jesus Christ.</p>
+                <div class="social-icons">
+                    <span>FB</span> <span>IG</span> <span>YT</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Access</h4>
+                <ul>
+                    <li><a href="#">Ministry Groups</a></li>
+                    <li><a href="#">Giving Portal</a></li>
+                    <li><a href="#">Prayer Requests</a></li>
+                    <li><a href="#">Counseling</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h4>Service Hours</h4>
+                <p>Sundays: 08:00 & 10:30 GMT</p>
+                <p>Tuesdays: 18:00 GMT</p>
+                <p>Fridays: 23:00 GMT (Vigil)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with ❤️ by <strong>Nana Yaw Awuah</strong> | &copy; 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="videoModal" class="modal-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="position: relative; width: 90%; max-width: 900px;">
+            <span class="close-modal" style="position: absolute; top: -45px; right: 0; color: white; font-size: 40px; cursor: pointer;">&times;</span>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe id="videoPlayer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sermons.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
